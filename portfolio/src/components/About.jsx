@@ -15,7 +15,7 @@ function About() {
                             I specialize in creating scalable, performing web applications using modern technologies.
                         </p>
                         <p className='text-muted-foreground'>
-                            I'm passionate about creating elegant solutions to complex problems and I'm constantly learning new technologies and techniques to stay at the forefront of the ever-evolving web landscape.
+                            A Backend Developer who loves building the server-side logic that powers web applications. Comfortable with REST APIs, databases, and Git, currently leveling up through hands-on projects and real-world problem solving.
                         </p>
                         <div className='flex flex-col sm:flex-row gap-4 pt-4 justify-center'>
                             <a href="#contact" className='cosmic-button'> Get In Touch </a>
@@ -32,7 +32,7 @@ function About() {
                                 </div>
                                 <div className='text-left'>
                                     <h4 className='font-semibold text-lg'> Web Development </h4>
-                                    <p className='text-muted-foreground'>Creating responsive websites and web applications with modern frameworks.</p>
+                                    <p className='text-muted-foreground'>Creating responsive websites and web applications using React, Tailwind & Javascript/HTML/CSS.</p>
                                 </div>
                             </div>
                         </div>
@@ -42,8 +42,8 @@ function About() {
                                     <User className='h-6 w-6 text-primary' />
                                 </div>
                                 <div className='text-left'>
-                                    <h4 className='font-semibold text-lg'> BackEnd Web Development </h4>
-                                    <p className='text-muted-foreground'>Designing Scalable Systems</p>
+                                    <h4 className='font-semibold text-lg'> Backend Web Development </h4>
+                                    <p className='text-muted-foreground'>Foundational knowledge in server-side programming, databases, and API development. Familiar with core concepts such as RESTful APIs, basic Auth using JWT, version control with Git, and Node.js. Comfortable working in a collaborative environment, writing clean and readable code, and debugging common issues</p>
                                 </div>
                             </div>
                         </div>
@@ -54,7 +54,7 @@ function About() {
                                 </div>
                                 <div className='text-left'>
                                     <h4 className='font-semibold text-lg'> Project Management </h4>
-                                    <p className='text-muted-foreground'>Completing projects from with agile methodologies.</p>
+                                    <p className='text-muted-foreground'>Completing projects with agile methodologies including breaking down tasks, setting priorities, and tracking progress using tools like GitHub Projects.</p>
                                 </div>
                             </div>
                         </div>

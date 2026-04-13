@@ -15,36 +15,34 @@ function ContactSection() {
                 </p>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-12'>
                     <div className='space-y-8'>
-                        <h3 className='text-2xl font-semibold mb-6'>Contact Information</h3>
-                        <div className='space-y-6 flex flex-col max-md:items-center justify-center'>
-                            <div className='flex items-start space-x-4'>
+                        <h3 className='text-2xl font-semibold px-auto mb-6'>Contact Information</h3>
+                        <div className='space-y-6 flex flex-col w-full justify-center'>
+                            <div className='max-md:mx-auto max-md:w-1/2 flex items-start space-x-4'>
                                 <div className='p-3 rounded-full bg-primary/10'>
                                     <Mail className='h-6 w-6 text-primary' /> {""}
                                 </div>
                                 <div>
-                                    <h4 className='md:text-start'>Email </h4>
-                                    <a href="mailto:hello@gmail.com" className='text-muted-foreground hover:text-primary transition-colors text-start'>
+                                    <h4 className='text-start'>Email </h4>
+                                    <a className='text-muted-foreground hover:text-primary transition-colors text-start'>
                                         yuvrajadwal2000@gmail.com
                                     </a>
                                 </div>
                             </div>
-                            <div className='flex items-start space-x-4'>
+                            <div className='max-md:mx-auto max-md:w-1/2  flex  items-start  space-x-4'>
                                 <div className='p-3 rounded-full bg-primary/10'>
                                     <Phone className='h-6 w-6 text-primary' /> {""}
                                 </div>
                                 <div>
-                                    <h4 className='md:text-start'>Phone </h4>
-                                    <a href="tel:+911234567890" className='text-muted-foreground hover:text-primary transition-colors'>
-                                        +91 7983XXXXXX
-                                    </a>
+                                    <h4 className='text-start'>Phone </h4>
+                                    <a className='text-muted-foreground hover:text-primary transition-colors'>+91 7983XXXXXX</a>
                                 </div>
                             </div>
-                            <div className='flex items-start space-x-4'>
+                            <div className='max-md:mx-auto max-md:w-1/2 flex items-start space-x-4'>
                                 <div className='p-3 rounded-full bg-primary/10'>
                                     <MapPin className='h-6 w-6 text-primary' /> {""}
                                 </div>
                                 <div>
-                                    <h4 className='md:text-start'>Location </h4>
+                                    <h4 className='text-start'>Location </h4>
                                     <a className='text-muted-foreground hover:text-primary transition-colors'>
                                         Delhi, India
                                     </a>
@@ -52,16 +50,13 @@ function ContactSection() {
                             </div>
                         </div>
                         <div className='pt-8 '>
-                            <h4> Connect with me</h4>
+                            <h4 className='mb-2'> Connect with me</h4>
                             <div className='flex space-x-4 justify-center'>
-                                <a target='_blank' >
-                                    <ExternalLink />
+                                <a target='_blank' href='https://github.com/yuvrajcodes31' className='flex items-center gap-2 cursor-pointer'>
+                                    <ExternalLink />Github
                                 </a>
-                                <a target='_blank' >
-                                    <ExternalLink />
-                                </a>
-                                <a target='_blank' >
-                                    <ExternalLink />
+                                <a target='_blank' href='https://www.linkedin.com/in/yuvraj-adwal-39800b401' className='flex items-center gap-2'>
+                                    <ExternalLink />LinkedIn
                                 </a>
                             </div>
                         </div>
@@ -84,7 +79,7 @@ function ContactSection() {
                                 <textarea disabled id='message' required
                                     className='w-full px-4 py-3 rounded-md border bg-background focus:outline-hidden focus:ring-2 focus:ring-primary resize-none' placeholder="Hello, I'd like to talk about..." />
                             </div>
-                            <button type='submit' className={cn("cosmic-button w-full flex items-center justify-center gap-2")}>
+                            <button type='submit' disabled className={cn("cosmic-button w-full flex items-center justify-center gap-2")}>
                                 Send Message
                                 <Send size={16} />
                             </button>

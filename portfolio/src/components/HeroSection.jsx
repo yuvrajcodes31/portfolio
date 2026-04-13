@@ -12,7 +12,7 @@ function HeroSection() {
                         <span className='text-gradient ml-2 opacity-0 animate-fade-in-delay-2'> Adwal</span>
                     </h1>
                     <p className='text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-4'>
-                        I create stellar web experience with modern technologies. Specializing in back-end development, I build interfaces that are scalable.
+                        I create stellar web experience with modern technologies. Specializing in back-end development, I builds and maintain the server-side technology, databases, and APIs that power a website or application's functionality.
                     </p>
                     <div className='opacity-0 animate-fade-in-delay-4 pt-4'>
                         <a href="#project" className='cosmic-button'>View My Work</a>

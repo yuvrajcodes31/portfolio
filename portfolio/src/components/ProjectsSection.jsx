@@ -5,7 +5,7 @@ const projects = [
     {
         id: 1,
         title: "Multi User Chat Application",
-        description: "A responsive chat application made using React, Tailwind, Express, Cloudinary, MongoDB and NodeJs",
+        description: "A FullStack responsive chat application made using React, Tailwind, Express, Cloudinary, MongoDB and NodeJs",
         image: "/projects/project1.png",
         tags: ["React", "TailwindCSS", "MongoDB","mongoose", "JWT", "Cloudinary", "Socket.io", "Express"],
         demoUrl: "https://chat-app-delta-eight-36.vercel.app/",
@@ -14,7 +14,7 @@ const projects = [
     {
         id: 2,
         title: "flowAi - A Multi-purpose Saas App",
-        description: "A responsive AI Saas App made using React, Tailwind, Express, Neon, Cloudinary, and NodeJs. It consumes Gemini Api and Cloudinary Api.",
+        description: "A FullStack responsive AI Saas App made using React, Tailwind, Express, Neon, Cloudinary, and NodeJs. It consumes Gemini Api and Cloudinary Api.",
         image: "/projects/project2.png",
         tags: ["React", "TailwindCSS", "Neon","Clerk", "GenAI", "Cloudinary","Express" ],
         demoUrl: "https://flow-ai-zeta.vercel.app/",
@@ -60,10 +60,10 @@ function ProjectsSection() {
                                     <a
                                         href={project.demoUrl}
                                         target='_blank'
-                                        className='text-foreground/80 hover:text-primary transition-colors duration-300'><ExternalLink size={20}/></a>
+                                        className='text-foreground/80 hover:text-primary transition-colors flex items-center gap-2 duration-300'><ExternalLink size={20}/>Live Site</a>
                                     <a href={project.githubUrl}
                                         target='_blank'
-                                        className='text-foreground/80 hover:text-primary transition-colors duration-300'><GitCommit size={20} /></a>
+                                        className='text-foreground/80 hover:text-primary transition-colors flex items-center gap-2 duration-300'><GitCommit size={20} />Github repo</a>
                                 </div>
                             </div>
                         </div>

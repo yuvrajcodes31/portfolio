@@ -7,8 +7,10 @@ const navItems = [
     { name: "Home", href: "#hero" },
     { name: "About", href: "#about" },
     { name: "Skills", href: "#skills" },
-    { name: "Project", href: "#project" },
+    { name: "Projects", href: "#project" },
     { name: "Contact", href: "#contact" },
+    { name: "GitHub", href: "https://github.com/yuvrajcodes31", target: "_blank" },
+    { name: "LinkedIn", href: "https://www.linkedin.com/in/yuvraj-adwal-39800b401", target: "_blank" },
 ]
 
 function Navbar() {
@@ -26,7 +28,7 @@ function Navbar() {
     }, [])
     return (
         <div className={`fixed w-full z-40 transition-all duration-300 ${isScrolled ? "py-4 bg-background/70 backdrop-blur-md shadow-xs" : "py-5"}`}>
-            <div className="container flex items-center justify-between">
+            <div className="container flex items-center justify-between pr-20">
                 <a className='text-xl font-bold text-primary flex items-center' href='#hero'>
                     <span className='relative z-10'>
                         <span className='text-glow text-foreground'>Yuvraj</span> Portfolio
@@ -36,7 +38,7 @@ function Navbar() {
                 {/* desktop nav */}
                 <div className='hidden md:flex space-x-8'>
                     {navItems.map((item, key) => (
-                        <a key={key} href={item.href} className='text-foreground/80 hover:text-primary transition-colors duration-300'>{item.name}</a>
+                        <a key={key} href={item.href} target={item.target} className='text-foreground/80 hover:text-primary transition-colors duration-300'>{item.name}</a>
                     ))}
                 </div>
 
