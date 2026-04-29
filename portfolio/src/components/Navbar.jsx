@@ -10,7 +10,7 @@ const navItems = [
     { name: "Projects", href: "#project" },
     { name: "Contact", href: "#contact" },
     { name: "GitHub", href: "https://github.com/yuvrajcodes31", target: "_blank" },
-    { name: "LinkedIn", href: "https://www.linkedin.com/in/yuvraj-adwal-39800b401", target: "_blank" },
+    { name: "LinkedIn", href: "https://www.linkedin.com/in/yuvraj-a-39800b401", target: "_blank" },
 ]
 
 function Navbar() {
@@ -42,8 +42,8 @@ function Navbar() {
                     ))}
                 </div>
 
-            {/* mobile nav */}
-            <button onClick={() => setIsMenuOpen((prev) => !prev)} className='md:hidden p-2 text-foreground z-60'>{isMenuOpen ? <X size={24} /> : <Menu size={24} />}</button>
+                {/* mobile nav */}
+                <button onClick={() => setIsMenuOpen((prev) => !prev)} className='md:hidden p-2 text-foreground z-60'>{isMenuOpen ? <X size={24} /> : <Menu size={24} />}</button>
 
             </div>
 

@@ -1,8 +1,48 @@
 import { Mail, MapPin, Phone, ExternalLink, Send } from 'lucide-react'
-import React from 'react'
+import React, { useState } from 'react'
 import { cn } from '@/lib/utils'
+import emailjs from '@emailjs/browser'
 
 function ContactSection() {
+
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [message, setMessage] = useState('')
+    const [loading, setLoading] = useState(false)
+
+
+    const sendEmail = async (e) => {
+        e.preventDefault();
+
+        try {
+            setLoading(true);
+
+            const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+            const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+            const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+            const templateParams = {
+                name,
+                email,
+                message,
+            };
+
+            emailjs.init(publicKey);
+
+            await emailjs.send(serviceId, templateId, templateParams);
+
+            alert("Your message has been sent!");
+
+            setName("");
+            setEmail("");
+            setMessage("");
+        } catch (error) {
+            console.log(error);
+            alert("Failed to send message");
+        } finally {
+            setLoading(false);
+        }
+    };
 
     return (
         <section id='contact' className='py-24 px-4 relative bg-secondary/30'>
@@ -49,13 +89,17 @@ function ContactSection() {
                                 </div>
                             </div>
                         </div>
-                        <div className='pt-8 '>
+                        <button onClick={()=>window.open('/YuvrajCV.pdf')}
+                             className='px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300'>
+                                Download CV
+                            </button>
+                        <div className='pt-3 '>
                             <h4 className='mb-2'> Connect with me</h4>
                             <div className='flex space-x-4 justify-center'>
                                 <a target='_blank' href='https://github.com/yuvrajcodes31' className='flex items-center gap-2 cursor-pointer'>
                                     <ExternalLink />Github
                                 </a>
-                                <a target='_blank' href='https://www.linkedin.com/in/yuvraj-adwal-39800b401' className='flex items-center gap-2'>
+                                <a target='_blank' href='https://www.linkedin.com/in/yuvraj-a-39800b401' className='flex items-center gap-2'>
                                     <ExternalLink />LinkedIn
                                 </a>
                             </div>
@@ -63,23 +107,23 @@ function ContactSection() {
                     </div>
                     <div className='bg-card p-8 rounded-lg shadow-xs'>
                         <h3 className='text-2xl font-semibold mb-6'>Send a Message</h3>
-                        <form className='space-y-6'>
+                        <form onSubmit={sendEmail} className='space-y-6'>
                             <div>
                                 <label htmlFor="name" className='block text-sm font-medium mb-2'>Your Name</label>
-                                <input disabled type="text" id='name' name='name' required
+                                <input onChange={(e) => setName(e.target.value)} value={name} type="text" id='name' name='name' required
                                     className='w-full px-4 py-3 rounded-md border bg-background focus:outline-hidden focus:ring-2 focus:ring-primary' placeholder='Name' />
                             </div>
                             <div>
                                 <label htmlFor="email" className='block text-sm font-medium mb-2'>Your Email</label>
-                                <input disabled type="email" id='email' name='email' required
+                                <input onChange={(e) => setEmail(e.target.value)} value={email} type="email" id='email' name='email' required
                                     className='w-full px-4 py-3 rounded-md border bg-background focus:outline-hidden focus:ring-2 focus:ring-primary' placeholder='example@gmail.com' />
                             </div>
                             <div>
                                 <label htmlFor="message" className='block text-sm font-medium mb-2'>Enter a message</label>
-                                <textarea disabled id='message' required
+                                <textarea onChange={(e) => setMessage(e.target.value)} value={message} id='message' required
                                     className='w-full px-4 py-3 rounded-md border bg-background focus:outline-hidden focus:ring-2 focus:ring-primary resize-none' placeholder="Hello, I'd like to talk about..." />
                             </div>
-                            <button type='submit' disabled className={cn("cosmic-button w-full flex items-center justify-center gap-2")}>
+                            <button disabled={loading} type='submit' className={cn("cosmic-button w-full flex items-center justify-center gap-2")}>
                                 Send Message
                                 <Send size={16} />
                             </button>

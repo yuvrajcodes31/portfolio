@@ -2,20 +2,21 @@ import React, { useState } from 'react'
 import { cn } from "@/lib/utils"
 
 const skills = [
-    { name: "HTML/CSS", level: 90, category: "frontend" },
-    { name: "Javascript", level: 95, category: "frontend" },
-    { name: "React", level: 85, category: "frontend" },
+    { name: "HTML/CSS", category: "frontend" },
+    { name: "Javascript", category: "frontend" },
+    { name: "React", category: "frontend" },
 
     // Backend
-    { name: "NodeJs", level: 80, category: "backend" },
-    { name: "Express", level: 95, category: "backend" },
-    { name: "MongoDB", level: 85, category: "backend" },
-    { name: "Redis", level: 80, category: "backend" },
+    { name: "NodeJs", category: "backend" },
+    { name: "Express", category: "backend" },
+    { name: "MongoDB", category: "backend" },
+    { name: "Redis", category: "backend" },
+    { name: "Supabase", category: "backend" },
 
     // Tools
-    { name: "Git/Github", level: 80, category: "tools" },
-    { name: "Docker", level: 85, category: "tools" },
-    { name: "VS Code", level: 85, category: "tools" },
+    { name: "Git/Github", category: "tools" },
+    { name: "Docker", category: "tools" },
+    { name: "VS Code", category: "tools" },
 
 ]
 
@@ -46,12 +47,6 @@ function SkillsSection() {
                         <div key={index} className='bg-card p-6 rounded-lg shadow-xs card-hover'>
                             <div className='text-left mb-4'>
                                 <h3 className='font-semibold text-lg'> {skills.name}</h3>
-                            </div>
-                            <div className="w-full h-2 rounded-full overflow-hidden">
-                                <div className='bg-primary h-2 rounded-full origin-left animate-[grow_1.5s_ease-out]' style={{ width: skills.level + "%" }} />
-                            </div>
-                            <div className='text-right mt-1'>
-                                <span className='text-xs text-muted-foreground'>{skills.level}%</span>
                             </div>
                         </div>
                     ))}
